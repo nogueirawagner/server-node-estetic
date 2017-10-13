@@ -4,3 +4,11 @@ Base de servidor NodeJs com autenticação, autorização, mvc e mongodb.
 1º Iniciar uma aplicação node, utiliza o comando node init -y. Irá gerar o package.json;
 
 2º Instalar os pacotes básicos, http express e debug. Utiliza o comando npm install http express e debug --save
+
+3º Criar o arquivo app.js dentro da pasta src. Neste arquivo será o controlador de nossa aplicação, nele que estarão registrado as rotas, os modelos, a conexão com o banco e o CORS.
+
+4º Cria uma pasta bin na raiz, e dentro dela coloca o arquivo que irá iniciar o servidor node. Neste caso a arquivo server.js; Neste arquivo que irá ficar as configurações do servidor, como porta, criação do servidor a partir das configurações registradas no meu app.js, funções para tratar erros, debug.
+
+5º Cria um arquivo de configuração. Neste irá conter dados que são globais à aplicação, suas chaves de serviços externos, connections strings e etc.
+
+

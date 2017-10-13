@@ -1,0 +1,25 @@
+{
+  "name": "serverbase",
+  "version": "1.0.0",
+  "description": "Base de servidor NodeJs com autenticação, autorização, mvc e mongodb.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nogueirawagner/serverbase.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nogueirawagner/serverbase/issues"
+  },
+  "homepage": "https://github.com/nogueirawagner/serverbase#readme",
+  "dependencies": {
+    "debug": "^3.1.0",
+    "express": "^4.16.2",
+    "http": "0.0.0"
+  }
+}

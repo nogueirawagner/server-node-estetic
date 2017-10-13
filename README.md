@@ -22,6 +22,16 @@ Base de servidor NodeJs com autenticação, autorização, mvc e mongodb.
 ------------------- ## -------- MODELS ----------- ## ---------------
 Modelo de exemplo está utilizando um Schema do pacote mongoose. Este esquema representa o tipo da tabela no banco de dados NOSQL.
 
+------------------- ## -------- REPOSITORIES ----------- ## -----------
+No repositorio todos os métodos CRUD e as operações que compõe. 
+TODO: Criar um repositorio genérico.
+
+------------------- ## -------- CONTROLLER ----------- ## --------------
+No controller será o primeiro contato da requisição com o servidor. O nome dado para o método no controller, deverá ser o mesmo chamado pela aplicação client.
+
+
+
+
 
 
 

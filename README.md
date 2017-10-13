@@ -19,6 +19,10 @@ Base de servidor NodeJs com autenticação, autorização, mvc e mongodb.
 ---> Services: Irá conter serviços de autenticações e autorizações, e emails.
 ---> Validators: Classe utilizada para validar propriedade de modelos. Ex: É e-mail válido, é telefone...
 
+------------------- ## -------- MODELS ----------- ## ---------------
+Modelo de exemplo está utilizando um Schema do pacote mongoose. Este esquema representa o tipo da tabela no banco de dados NOSQL.
+
+
 
 
 

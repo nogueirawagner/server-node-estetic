@@ -17,7 +17,7 @@ Base de servidor NodeJs com autenticação, autorização, mvc e mongodb.
 --> 3- Controllers: Irá processar as requisições recebidas.
 --> 4- Routes: Irá direcionar a requisição para a operação contida dentro do controller.
 ---> Services: Irá conter serviços de autenticações e autorizações, e emails.
----> Validators: Classe utilizada para validar modelos.
+---> Validators: Classe utilizada para validar propriedade de modelos. Ex: É e-mail válido, é telefone...
 
 
 

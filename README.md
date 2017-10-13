@@ -11,4 +11,14 @@ Base de servidor NodeJs com autenticação, autorização, mvc e mongodb.
 
 5º Cria um arquivo de configuração. Neste irá conter dados que são globais à aplicação, suas chaves de serviços externos, connections strings e etc.
 
+6º Cria estrutura de pastas dentro da src, aqui está ordenado pela hierarquia que deverá seguir dentro do projeto.
+--> 1- Models: Irá conter as entidades de modelo que irão compor o projeto.
+--> 2- Repositories: No repositorio é onde será exportado as operações (CRUD) de cada entididade.
+--> 3- Controllers: Irá processar as requisições recebidas.
+--> 4- Routes: Irá direcionar a requisição para a operação contida dentro do controller.
+---> Services: Irá conter serviços de autenticações e autorizações, e emails.
+---> Validators: Classe utilizada para validar modelos.
+
+
+
 

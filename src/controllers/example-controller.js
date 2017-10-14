@@ -18,7 +18,7 @@ exports.NewExample = async (req, res) => {
 
 exports.UpdateExample = async (req, res) => {
     try {
-        const data = repositorio.UpdateExample(req.params.id, req.body);
+        const data = repositorio.UpdateExample(req.body.id, req.body);
         res.status(200).send({
             message: 'Example alterado.'
         });
@@ -32,13 +32,61 @@ exports.UpdateExample = async (req, res) => {
 
 exports.RemoveExample = async (req, res) => {
     try {
-        const data = repositorio.RemoveExample(req.params.id);
+        const data = repositorio.RemoveExample(req.body.id);
         res.status(200).send({
             message: 'Example removido'
         });
     } catch (e) {
         res.status(500).send({
             message: 'Falha ao remover',
+            data: e
+        });
+    }
+}
+
+exports.GetByIdExample = async (req, res) => {
+    try {
+        const data = repositorio.GetByIdExample(req.body.id);
+        res.status(200).send(data);
+    } catch (e) {
+        res.status(500).send({
+            message: 'Falha ao buscar objeto',
+            data: e
+        });
+    }
+}
+
+exports.GetExamples = async (req, res) => {
+    try {
+        const data = repositorio.GetExamples();
+        res.status(200).send(data);
+    } catch (e) {
+        res.status(500).send({
+            message: 'Falha ao buscar objetos',
+            data: e
+        });
+    }
+}
+
+exports.GetByCode = async (req, res) => {
+    try {
+        const data = repositorio.GetByCode(red.body.id);
+        res.status(200).send(data);
+    } catch (e) {
+        res.status(500).send({
+            message: 'Falha ao buscar objeto',
+            data: e
+        });
+    }
+}
+
+exports.GetByMark = async (req, res) => {
+    try {
+        const data = repositorio.GetByMark(req.body.marca);
+        res.status(200).send(data);
+    } catch (e) {
+        res.status(500).send({
+            message: 'Falha ao buscar objetos',
             data: e
         });
     }

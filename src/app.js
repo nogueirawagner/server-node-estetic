@@ -3,15 +3,20 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const config = require('./config');
 
 const app = express();
 const router = express.Router();
 
 // Carrega os modelos
+const example_model = require('./models/example');
 
 // Conexao com banco
+mongoose.connect(config.connectionString);
 
-// Rotas
+// Carrega as Rotas
+const index_route = require('./routes/index-route');
+const example_route = require('./routes/example-route');
 
 
 app.use(bodyParser.json({
@@ -29,5 +34,7 @@ app.use(function (req, res, next) {
 });
 
 // Add as rotas ao app.
+app.use('/', index_route);
+app.use('/example', example_route);
 
 module.exports = app;

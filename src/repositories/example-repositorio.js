@@ -41,7 +41,7 @@ exports.GetByIdExample = async (id) => {
 exports.GetExamples = async () => {
     const exps = await example.find({
         ativo: true
-    });
+    }, 'titulo');
     return exps;
 }
 

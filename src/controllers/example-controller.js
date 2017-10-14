@@ -1,6 +1,6 @@
 'use strict';
 
-const repositorio = require('./example-repositorio');
+const repositorio = require('../repositories/example-repositorio');
 
 exports.NewExample = async (req, res) => {
     try {
@@ -46,7 +46,7 @@ exports.RemoveExample = async (req, res) => {
 
 exports.GetByIdExample = async (req, res) => {
     try {
-        const data = repositorio.GetByIdExample(req.body.id);
+        const data = await repositorio.GetByIdExample(req.body.id);
         res.status(200).send(data);
     } catch (e) {
         res.status(500).send({
@@ -58,7 +58,7 @@ exports.GetByIdExample = async (req, res) => {
 
 exports.GetExamples = async (req, res) => {
     try {
-        const data = repositorio.GetExamples();
+        const data = await repositorio.GetExamples();
         res.status(200).send(data);
     } catch (e) {
         res.status(500).send({
@@ -70,7 +70,7 @@ exports.GetExamples = async (req, res) => {
 
 exports.GetByCode = async (req, res) => {
     try {
-        const data = repositorio.GetByCode(red.body.id);
+        const data = await repositorio.GetByCode(red.body.id);
         res.status(200).send(data);
     } catch (e) {
         res.status(500).send({
@@ -82,7 +82,7 @@ exports.GetByCode = async (req, res) => {
 
 exports.GetByMark = async (req, res) => {
     try {
-        const data = repositorio.GetByMark(req.body.marca);
+        const data = await repositorio.GetByMark(req.body.marca);
         res.status(200).send(data);
     } catch (e) {
         res.status(500).send({

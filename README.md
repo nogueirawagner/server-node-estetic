@@ -29,6 +29,15 @@ TODO: Criar um repositorio genérico.
 ------------------- ## -------- CONTROLLER ----------- ## --------------
 No controller será o primeiro contato da requisição com o servidor. O nome dado para o método no controller, deverá ser o mesmo chamado pela aplicação client.
 
+------------------- ## -------- ROTAS ----------- ## --------------
+As rotas devem ser definidas nos arquivos routes, e depois carregadas no app.js;
+
+Rota inicial está no arquivo index.js, ou seja, ao acessar a pagina localhost:3000 será redirecionado para aquela rota.
+
+Rota do example, está no arquivo example-route.js. Nela está contida todas as rotas e seus verbos.
+
+
+
 
 
 

@@ -2,4 +2,3 @@ node_modules
 thumbs.db
 .ds_store
 desktop.ini
-.travis.yml

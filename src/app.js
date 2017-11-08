@@ -41,6 +41,7 @@ app.use(function (req, res, next) {
 
 //chamando a view. ## GAMBIARRA
 app.use('/', express.static(__dirname + '/views'));
+app.use('/categoria', express.static(__dirname + '/views/categoria'));
 
 app.use('/example', example_route);
 app.use('/categoria', categoria_route);

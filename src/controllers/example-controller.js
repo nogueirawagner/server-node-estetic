@@ -4,6 +4,7 @@ const repositorio = require('../repositories/example-repositorio');
 
 exports.NewExample = async (req, res) => {
     try {
+        console.log("chegou aqui");
         const data = repositorio.NewExample(req.body);
         res.status(200).send({
             message: 'Example cadastrado.'

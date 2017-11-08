@@ -19,6 +19,7 @@ const index_route = require('./routes/index-route');
 const example_route = require('./routes/example-route');
 
 
+
 app.use(bodyParser.json({
     limit: '5mb'
 }));
@@ -34,7 +35,8 @@ app.use(function (req, res, next) {
 });
 
 // Add as rotas ao app.
-app.use('/', index_route);
+// app.use('/', index_route);
 app.use('/example', example_route);
+app.use('/', express.static(__dirname + '/views'))
 
 module.exports = app;

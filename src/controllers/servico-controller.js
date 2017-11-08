@@ -45,7 +45,7 @@ exports.Remover = async (req, res) => {
     }
 }
 
-exports.PegarCategoriaID = async (req, res) => {
+exports.PegarServicoID = async (req, res) => {
     try {
         const data = await repositorio.PegarServicoID(req.body.id);
         res.status(200).send(data);

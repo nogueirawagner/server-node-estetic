@@ -10,6 +10,8 @@ const router = express.Router();
 
 // Carrega os modelos
 const example_model = require('./models/example');
+const categoria_model = require('./models/categoria');
+const servico_model = require('./models/servico');
 
 // Conexao com banco
 mongoose.connect(config.connectionString);
@@ -35,12 +37,15 @@ app.use(function (req, res, next) {
 });
 
 // Add as rotas ao app.
-app.use('/', index_route);
+//app.use('/', index_route);
+
+//chamando a view. ## GAMBIARRA
+app.use('/', express.static(__dirname + '/views'));
+
 app.use('/example', example_route);
 app.use('/categoria', categoria_route);
 app.use('/servico', servico_route);
 
-//chamando a view. ## GAMBIARRA
-//app.use('/', express.static(__dirname + '/views'))
+
 
 module.exports = app;

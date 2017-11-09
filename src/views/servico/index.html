@@ -4,10 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+
     <title>Servico</title>
 </head>
 <body>
+
+<div id="app">
+  {{ message }}
+</div>
+
+
+
+
     <h1>Cadastre Serviço</h1>
     <form action="/servico/inserir" method="POST" name="">
     
@@ -51,14 +62,20 @@
               </tr>
           </tbody>
       </table>
-  
   </div> 
-  <h3 class="row">
-      Código fonte:
-      <button class="btn btn-default">
-          <a href="https://github.com/nogueirawagner/cursosweb/blob/master/Cursos/Views/Bootstrap/Tabela.cshtml" target="_blank">Aqui</a>
-      </button>
-  </h3>
+
+<script type="text/javascript">
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+</script>
 
 </body>
+
+
+
+
 </html>

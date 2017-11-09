@@ -1,0 +1,21 @@
+{
+  "name": "node_captura",
+  "description": "Base de servidor NodeJs com autenticação, autorização, mvc e mongodb.",
+  "main": "index.js",
+  "authors": [
+    "Wagner Nogueira <wagnogueira19@hotmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/nogueirawagner/server_node_estetica",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

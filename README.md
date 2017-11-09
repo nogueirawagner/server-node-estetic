@@ -37,7 +37,14 @@ Rota inicial está no arquivo index.js, ou seja, ao acessar a pagina localhost:3
 Rota do example, está no arquivo example-route.js. Nela está contida todas as rotas e seus verbos.
 
 
-
+-------------------------------------------
+Ao clonar:
+npm install
+npm install bower --save
+npm install bower -g
+npm bower init
+bower install bootstrap --save
+bower install jquery --save
 
 
 

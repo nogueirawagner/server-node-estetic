@@ -6,8 +6,8 @@ const controller = require('../controllers/servico-controller');
 
 router.get('/', controller.PegarTodos);
 router.get('/ById', controller.PegarServicoID);
-router.post('/', controller.Inserir);
-router.post('/', controller.Alterar);
+router.post('/Inserir', controller.Inserir);
+router.post('/Alterar', controller.Alterar);
 router.delete('/', controller.Remover);
 
 

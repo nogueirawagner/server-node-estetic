@@ -3,3 +3,4 @@ thumbs.db
 .ds_store
 desktop.ini
 /src/config.js
+bower_components

@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/servico-controller');
 
-router.get('/', controller.PegarTodos);
+router.get('/PegarTodos', controller.PegarTodos);
 router.get('/ById', controller.PegarServicoID);
 router.post('/Inserir', controller.Inserir);
 router.post('/Alterar', controller.Alterar);

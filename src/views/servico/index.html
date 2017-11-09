@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,68 +11,86 @@
 
     <title>Servico</title>
 </head>
-<body>
 
-<div id="app">
-  {{ message }}
-</div>
+<body  >
 
-
-
+    <div id="app">
+        <button v-on:click="pegaServicos()" >adasdsad</button>
+        <ul>
+            <li v-for="servico in servicos">
+                {{servico.nome}}
+            </li>
+        </ul>
+    </div>
 
     <h1>Cadastre Serviço</h1>
     <form action="/servico/inserir" method="POST" name="">
-    
-      nome:<br />
-      <input type="text" name="nome" /><br />
-    
-      <input type="submit" value="Cadastrar"/>
-    
+
+        nome:
+        <br />
+        <input type="text" name="nome" />
+        <br />
+
+        <input type="submit" value="Cadastrar" />
+
     </form>
 
-<h1>Serviços</h1>
-<div class="container">
-  
-      <div class="page-header">
-          <h1>Tabela bootstrap</h1>
-      </div>
-  
-      <table class="table table-striped table-bordered table-hover table-condensed">
-          <thead>
-              <tr>
-                  <th>Produto</th>
-                  <th>Fabricante</th>
-                  <th>Preço</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr class="success">
-                  <td>Notebook 980</td>
-                  <td>HP</td>
-                  <td>R$ 1.800,00</td>
-              </tr>
-              <tr class="danger">
-                  <td>MacBook Air</td>
-                  <td>Apple</td>
-                  <td>R$ 4.800,00</td>
-              </tr>
-              <tr>
-                  <td class="warning">HP Pavillon</td>
-                  <td class="info">HP</td>
-                  <td>R$ 2.800,00</td>
-              </tr>
-          </tbody>
-      </table>
-  </div> 
+    <h1>Serviços</h1>
+    <div class="container">
 
-<script type="text/javascript">
-var app = new Vue({
-  el: '#app',
-  data: {
-    message: 'Hello Vue!'
-  }
-})
-</script>
+        <div class="page-header">
+            <h1>Tabela bootstrap</h1>
+        </div>
+
+
+
+        <table class="table table-striped table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Fabricante</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="success">
+                    <td>Notebook 980</td>
+                    <td>HP</td>
+                    <td>R$ 1.800,00</td>
+                </tr>
+                <tr class="danger">
+                    <td>MacBook Air</td>
+                    <td>Apple</td>
+                    <td>R$ 4.800,00</td>
+                </tr>
+                <tr>
+                    <td class="warning">HP Pavillon</td>
+                    <td class="info">HP</td>
+                    <td>R$ 2.800,00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                servicos: []
+            }, methods: function pegaServicos() {
+                fetch('/servico/PegarTodos')
+                    .then(function (response) {
+                        return response.json();
+                    })
+                    .then(function (result) {
+                        this.servicos = result;
+                    });
+            }
+        })
+
+
+
+    </script>
 
 </body>
 

@@ -6,7 +6,7 @@ const controller = require('../controllers/categoria-controller');
 
 router.post('/', controller.Inserir);
 router.post('/', controller.Alterar);
-router.delete('/', controller.Remover);
+router.delete('/id', controller.Remover);
 router.get('/', controller.PegarTodos);
 router.get('/ById', controller.PegarCategoriaID);
 

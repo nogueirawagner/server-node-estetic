@@ -32,7 +32,8 @@ exports.Alterar = async (req, res) => {
 
 exports.Remover = async (req, res) => {
     try {
-        const data = repositorio.Remover(req.body.id);
+        const id = req.query.id;
+        const data = repositorio.Remover(id);
         res.status(200).send({
             message: 'Example removido'
         });

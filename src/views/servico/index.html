@@ -43,11 +43,10 @@
                     <tbody>
 
                         <tr class="success" v-for="servico in servicos">
-                            <td id="servicoId" hidden="true">{{servico._id}}</td>
                             <td>{{servico.nome}}</td>
                             <td>{{servico.categoria.nome}}</td>
                             <td>
-                                <button id="excluir" class="btn btn-danger" v-on:click="excluirServico">Excluir</button>
+                                <button id="excluir" v-bind:id="servico._id" class="btn btn-danger" v-on:click="excluirServico(servico._id)">Excluir</button>
                             </td>
                         </tr>
                     </tbody>
@@ -92,17 +91,13 @@
                             this.servicos = error
                         })
                 },
-                excluirServico: function () {
+                excluirServico: function (pId) {
                     var self = this;
-                    axios.delete('/servico', {
-                        headers: {
-                            id: document.getElementById("servicoId").innerHTML
-                        }
-                    })
+                    axios.delete('/servico', { params: { 'id': pId } })
                         .then(function (response) {
                             self.servicos.pop({
                                 nome: document.getElementById("nome").value,
-                                categoria: { nome: 'estetica' }
+                                categoria: { nome: 'Estética' }
                             })
                         })
                         .catch(function (error) {

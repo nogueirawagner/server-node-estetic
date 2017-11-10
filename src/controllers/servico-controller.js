@@ -6,7 +6,7 @@ exports.Inserir = async (req, res) => {
     try {
         const data = repositorio.Inserir(req.body);
         res.status(200).send({
-            message: 'Categoria cadastrada.'
+            message: 'Servico cadastrado.'
         });
     } catch (e) {
         res.status(500).send({
@@ -20,7 +20,7 @@ exports.Alterar = async (req, res) => {
     try {
         const data = repositorio.Alterar(req.body.id, req.body);
         res.status(200).send({
-            message: 'Categoria alterada.'
+            message: 'Servico alterada.'
         });
     } catch (e) {
         res.status(500).send({
@@ -32,10 +32,9 @@ exports.Alterar = async (req, res) => {
 
 exports.Remover = async (req, res) => {
     try {
-        const id = req.query.id;
-        const data = repositorio.Remover(id);
+        const data = repositorio.Remover(req.body.id);
         res.status(200).send({
-            message: 'Example removido'
+            message: 'Servico removido.'
         });
     } catch (e) {
         res.status(500).send({

@@ -27,14 +27,14 @@ exports.Alterar = async (id, data) => {
 // Remover
 exports.Remover = async (id) => {
     const exp = await example
-        .findByIdAndRemove(id);
+        .findOneAndRemove(id);
     return exp;
 }
 
 // Buscar por Id
 exports.PegarServicoID = async (id) => {
     const exp = await example
-        .findById(id);
+        .findOne(id);
     return exp;
 }
 

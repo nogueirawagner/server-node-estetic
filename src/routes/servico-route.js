@@ -8,7 +8,7 @@ router.get('/PegarTodos', controller.PegarTodos);
 router.get('/ById', controller.PegarServicoID);
 router.post('/Inserir', controller.Inserir);
 router.post('/Alterar', controller.Alterar);
-router.delete('/', controller.Remover);
+router.post('/remover', controller.Remover);
 
 
 module.exports = router;

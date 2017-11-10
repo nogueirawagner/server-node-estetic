@@ -85,7 +85,8 @@
                             self.servicos.push({
                                 nome: document.getElementById("nome").value,
                                 categoria: { nome: 'estetica' }
-                            })
+                            });
+                            document.getElementById("nome").value = "";
                         })
                         .catch(function (error) {
                             this.servicos = error
@@ -93,7 +94,10 @@
                 },
                 excluirServico: function (pId) {
                     var self = this;
-                    axios.delete('/servico', { params: { 'id': pId } })
+                    axios.post('/servico/remover', 
+                        { 
+                            id: pId
+                        })
                         .then(function (response) {
                             self.servicos.pop({
                                 nome: document.getElementById("nome").value,

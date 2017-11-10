@@ -4,6 +4,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const schema = new Schema({
+    categoria: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Categoria'
+    },
     nome: {
         type: String,
         required: true,

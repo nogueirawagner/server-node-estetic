@@ -5,6 +5,7 @@ const example = mongoose.model('Servico');
 
 // Criar novo 
 exports.Inserir = async (data) => {
+    data.categoria = "5a038c7c839efa1dc073f81e";
     const exp = new example(data);
     return await exp.save();
 }
@@ -39,6 +40,7 @@ exports.PegarServicoID = async (id) => {
 
 // Buscar todos 
 exports.PegarTodos = async () => {
-    const exps = await example.find();
+    const exps = await example.find({}, 'nome categoria.nome')
+        .populate('categoria', 'nome');
     return exps;
 }

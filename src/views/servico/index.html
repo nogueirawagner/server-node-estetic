@@ -14,23 +14,21 @@
 </head>
 
 <body>
-    <h1>Cadastre Serviço</h1>
+    <h1>Cadastro de Serviços</h1>
     <div class="container">
         <div id="app">
             <div class="form-group">
                 <label>
                     <strong>Nome:</strong>
                 </label>
-                <input class="form-control" style="width:300px" type="text" id="nome" name="nome" />
-                <button style="position:relative; top:-35px; left:305px;" class="btn btn-primary" v-on:click="newService">Enviar</button>
+                <input v-on:keyup="salvarEnter" placeholder="Nome do serviço" class="form-control" style="width:300px" type="text" id="nome" autofocus />
+                <button style="position:relative; top:-35px; left:305px;" id="btnSalvar" class="btn btn-primary" v-on:click="newService">Enviar</button>
             </div>
-
 
             <div class="container">
                 <div class="page-header">
                     <h1>Serviços</h1>
                 </div>
-
                 <table id="table" class="table table-striped table-bordered table-hover table-condensed">
                     <thead>
                         <tr>
@@ -43,6 +41,7 @@
                     <tbody>
 
                         <tr class="success" v-for="servico in servicos">
+                            <td>{{servico._id}}</td>
                             <td>{{servico.nome}}</td>
                             <td>{{servico.categoria.nome}}</td>
                             <td>
@@ -78,40 +77,46 @@
                 },
                 newService: function () {
                     var self = this;
-                    axios.post('/servico/inserir', {
-                        nome: document.getElementById("nome").value
-                    })
-                        .then(function (response) {
-                            self.servicos.push({
-                                nome: document.getElementById("nome").value,
-                                categoria: { nome: 'estetica' }
+                    if (document.getElementById("nome").value.length > 0) {
+                        axios.post('/servico/inserir', {
+                            nome: document.getElementById("nome").value
+                        })
+                            .then(function (response) {
+                                self.servicos.push({
+                                    nome: document.getElementById("nome").value,
+                                    categoria: { nome: 'Estética' }
+                                });
+                                document.getElementById("nome").focus();
+                                document.getElementById("nome").value = "";
+
+                            })
+                            .catch(function (error) {
+                                this.servicos = error
                             });
-                            document.getElementById("nome").value = "";
+                    }
+                },
+                excluirServico: function (pId) {
+                    var self = this;
+                    axios.post('/servico/remover',
+                        {
+                            id: pId
+                        })
+                        .then(function (response) {
+                            self.servicos.pop();
                         })
                         .catch(function (error) {
                             this.servicos = error
                         })
                 },
-                excluirServico: function (pId) {
-                    var self = this;
-                    axios.post('/servico/remover', 
-                        { 
-                            id: pId
-                        })
-                        .then(function (response) {
-                            self.servicos.pop({
-                                nome: document.getElementById("nome").value,
-                                categoria: { nome: 'Estética' }
-                            })
-                        })
-                        .catch(function (error) {
-                            this.servicos = error
-                        })
+                salvarEnter: function (key) {
+                    if (key.keyCode == 13) {
+                        this.newService();
+                    }
                 }
-
             },
             beforeMount() {
                 this.getServices();
+                document.getElementById("nome").focus();
             }
         });
     </script>
